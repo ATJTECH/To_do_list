@@ -1,0 +1,21 @@
+<h3>List page</h3>>
+<table>
+    <thead>
+        <tr> 
+            <th>Task Name</th>>
+            <th>Task Description</th>>
+            <th></th>>
+         
+        </tr>>
+
+    </thead>>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.taskName}}</td>>
+            <td>{{this.taskDesc}}</td>>
+        </tr>>
+        {{/each}}
+
+    </tbody>>
+</table>>
