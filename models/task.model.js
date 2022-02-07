@@ -8,4 +8,4 @@ var taskSchema = new mongoose.Schema({
     }
 })
 
- mongoose.model('task',taskSchema) 
+ mongoose.model('Task',taskSchema) 

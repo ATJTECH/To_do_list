@@ -3,7 +3,7 @@
     <thead>
         <tr> 
             <th>Task Name</th>>
-            <th>Task Description</th>>
+            <th>Task Description</th>
             <th></th>>
          
         </tr>>
@@ -12,10 +12,15 @@
     <tbody>
         {{#each list}}
         <tr>
-            <td>{{this.taskName}}</td>>
-            <td>{{this.taskDesc}}</td>>
+            <td>{{this.taskName}}</td>
+            <td>{{this.taskDesc}}</td>
+            <td>
+                <a>Edit</a>
+                <a href="/task/delete/{{this._id}}">Delete</a>
+            </td>
         </tr>>
         {{/each}}
 
     </tbody>>
 </table>>
+<a href="/task">Go back and Create New</a>

@@ -16,7 +16,7 @@ function addTask(req,res){
     var Task=new task ()
     Task.taskName=req.bodytaskName;
     Task.taskDesc=req.body.taskDesc;
-    Task.save((err,docs))=>{
+    Task.save((err,docs)=>{
         if (!err)
         {
             res.redirect("task/list")
@@ -33,8 +33,25 @@ router.get('/list',(req,res)=>{
    Task.find((err,docs)=>{
        if(!err)
        {
-           res.render('task/list' , list: docs.map(docs=>docs.toJASON()))
+           res.render('task/list' ,{
+               list: docs.map(docs=>docs.toJASON())
+            })
        }
    })
+})
+
+//to delete
+
+router.get('/delete/id',(req,res)=>{
+    Task.findByIdAndRemove(req.params.id,(err,docs)=>{
+        if(!err)
+        {
+            res.redirect('/task/list');
+        }
+        else
+        {
+            console.log('Error in deleting'+err)
+        }
+    })
 })
 module.exports =router;
