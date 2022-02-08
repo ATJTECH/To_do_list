@@ -1,4 +1,5 @@
 const express=require('express');
+const res = require('express/lib/response');
 const router=express.Router();
 const mongoose=require('mongoose');
 const Task=mongoose.model('Task')
@@ -53,6 +54,42 @@ router.get('/delete/:id',(req,res)=>{
         }
     })
 })
+
+//edit
+
+router.get('/edit/:id', (req, res) =>{
+    Task.findById(req.params.id, function (err, doc) {
+        if(!err) {
+            res.render('task/edit', {task: doc.toJSON()})
+        }
+        else{
+            console.log(err)
+            res.redirect('/')
+        }
+    })
+})
+
+router.post('/edit/:id', (req, res)=>{
+        editTask(req, res)
+})
+
+function editTask(req, res) {
+        let update= {}
+        update.taskName = req.body.EditTaskName
+        update.taskDesc = req.body.EditTaskDesc
+
+        Task.findByIdAndUpdate (req.params.id, update, function (err, doc) {
+            if(!err) {
+                res.redirect('/')
+            }
+            else{
+                console.log(err);
+                res.redirect('/')
+            }
+        })
+
+  }
+
 
 module.exports=router;
 
