@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/TASKDB' , {useNewUrlParser : true} , (err)=>{
+mongoose.connect('mongodb+srv://atjtech:<atjtech>@taskapp.kd5ki.mongodb.net/taskapp?retryWrites=true&w=majority' , {useNewUrlParser : true} , (err)=>{
     if (!err)
     {
         console.log('mongodb successfully connected')
