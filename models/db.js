@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://atjtech:<atjtech>@taskapp.kd5ki.mongodb.net/taskapp?retryWrites=true&w=majority' , {useNewUrlParser : true} , (err)=>{
+mongoose.connect('mongodb+srv://user1:<user1>@mytaskapp.7e09q.mongodb.net/Mytaskapp?retryWrites=true&w=majority' , {useNewUrlParser : true} , (err)=>{
     if (!err)
     {
         console.log('mongodb successfully connected')
