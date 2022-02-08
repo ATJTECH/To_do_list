@@ -1,9 +1,18 @@
 <h3>{{viewTitle}}</h3>
-
+ 
 
 
 <form action="/task" method="post">
     
+     <style>
+body {
+  background-color: lightblue;
+}
+h3 {
+  color: red;
+  text-align: center;
+}
+     </style>
     <div class="form-group">
         <label>Task name:</label>
         <input required type="text" name="taskName" placeholder="task name" value="{{task.taskName}}">
