@@ -23,7 +23,7 @@ router.get('/list',(req,res)=>{
 })
 
 //add a task
-router.post('/task',(req,res)=>{
+router.post('/add',(req,res)=>{
     addTask(req,res)
 })
 //function to add task
